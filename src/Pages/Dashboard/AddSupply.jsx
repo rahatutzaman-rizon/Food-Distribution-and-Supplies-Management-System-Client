@@ -17,7 +17,7 @@ const AddSupply = () => {
       formData.append('quantity', values.quantity);
       formData.append('description', values.description);
 
-      const response = await axios.post('http://localhost:5000/products', formData, {
+      const response = await axios.post('https://food-supply-server-1.onrender.com/products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Card, Row, Col, Statistic, Typography, Divider, Button, Modal, InputNumber } from 'antd';
 import { CalendarOutlined, InfoCircleOutlined } from '@ant-design/icons';
@@ -8,6 +8,7 @@ const { Title, Text, Paragraph } = Typography;
 
 const DetailProduct = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [product, setProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,7 +17,7 @@ const DetailProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/products/${id}`);
+        const response = await axios.get(`https://food-supply-server-1.onrender.com/products/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -32,12 +33,13 @@ const DetailProduct = () => {
 
   const handleOk = async () => {
     try {
-      await axios.put(`http://localhost:5000/products/${id}/donate`, { quantity: donationQuantity });
+      await axios.put(`https://food-supply-server-1.onrender.com/products/${id}/donate`, { quantity: donationQuantity });
       setIsModalOpen(false);
-     
+      navigate(`/products/${id}`); // Navigate to the same page after confirming the donation
     } catch (error) {
       console.error('Error updating product quantity:', error);
     }
+    navigate("/");
   };
 
   const handleCancel = () => {

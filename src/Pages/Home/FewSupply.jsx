@@ -11,7 +11,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/products');
+        const response = await axios.get('https://food-supply-server-1.onrender.com/products');
         setProducts(response.data.slice(0, 5));
       } catch (error) {
         console.error('Error fetching products:', error);

@@ -12,7 +12,7 @@ const Supply = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://food-supply-server-1.onrender.com/products')
       .then(response => response.json())
       .then(data => setProducts(data));
   }, []);
