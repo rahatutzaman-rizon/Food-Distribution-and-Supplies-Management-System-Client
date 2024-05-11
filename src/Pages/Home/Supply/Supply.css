@@ -1,0 +1,54 @@
+.supply-layout {
+    min-height: 100vh;
+  }
+  
+  .supply-header {
+    background: linear-gradient(to right, #64dfd7, #53c3f3);
+    color: #fff;
+    padding: 0;
+  }
+  
+  .supply-banner {
+    background: linear-gradient(to right, #64dfd7, #53c3f3);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .supply-banner-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  
+  .supply-title {
+    margin: 0;
+  }
+  
+  .supply-paragraph {
+    margin-bottom: 0;
+  }
+  
+  .supply-content {
+    padding: 50px;
+  }
+  
+  .supply-row {
+    margin-top: 100px;
+  }
+  
+  .supply-card {
+    background-color: #f5f5f5;
+    transition: transform 0.3s;
+  }
+  
+  .supply-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .supply-card-image {
+    height: 200px;
+    object-fit: contain;
+  }
+  
+  
